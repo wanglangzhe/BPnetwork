@@ -43,6 +43,12 @@ protected:
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnStudy();
+	afx_msg void OnTestnetwork();
+	afx_msg void OnSavenetwork();
+	afx_msg void OnLoadnetwork();
+	afx_msg void OnIdentify();
 };
 
 #ifndef _DEBUG  // idView.cpp 中的调试版本

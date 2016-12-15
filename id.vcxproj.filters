@@ -39,6 +39,12 @@
     <ClInclude Include="Resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="bp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="myIdentify.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="id.cpp">
@@ -54,6 +60,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="idView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="myIdentify.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,5 +95,6 @@
     <None Include="res\id.rc2">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
