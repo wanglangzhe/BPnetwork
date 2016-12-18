@@ -190,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bp.h" />
+    <ClInclude Include="HDNUM_CHANGE.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="idDoc.h" />
     <ClInclude Include="idView.h" />
@@ -202,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bp.cpp" />
+    <ClCompile Include="HDNUM_CHANGE.cpp" />
     <ClCompile Include="id.cpp" />
     <ClCompile Include="idDoc.cpp" />
     <ClCompile Include="idView.cpp" />

@@ -6,6 +6,7 @@
 #include "bp.h"
 #include "myIdentify.h"
 #include "XOR.h"
+#include "HDNUM_CHANGE.h"
 #include <iostream>
 #include <string>
 
@@ -44,6 +45,8 @@ BEGIN_MESSAGE_MAP(CidView, CView)
 	ON_COMMAND(ID_LOADNETWORK, &CidView::OnLoadnetwork)
 	ON_COMMAND(ID_IDENTIFY, &CidView::OnIdentify)
 	ON_COMMAND(ID_XOR, &CidView::OnXor)
+	ON_COMMAND(ID_HDNUM_CHANGE, &CidView::OnHdnumChange)
+	ON_COMMAND(ID_TEST, &CidView::OnTest)
 END_MESSAGE_MAP()
 
 // CidView 构造/析构
@@ -220,8 +223,8 @@ void CidView::OnStudy()
 		
 		bool flag = bpNetwork->tranAset(1); //3 - tim * 2.0 / 1000
 
-		int x = 0, y = 0;
-		for (int lay = 1; lay < Layer; ++lay) {
+		int x = 0, y = 0, layer = bpNetwork->getLayer();
+		for (int lay = 1; lay < layer; ++lay) {
 
 			x += dx; y = 0;
 			dy = max(1, iH / (1 + bpNetwork->nodeOfLay(lay)));
@@ -239,7 +242,7 @@ void CidView::OnStudy()
 				brush.DeleteObject();
 			}
 
-			if (lay + 1 < Layer) {
+			if (lay + 1 < layer) {
 				
 				int y1, y2, dy2;
 				dy2 = iH / (1 + bpNetwork->nodeOfLay(lay + 1));
@@ -363,4 +366,40 @@ void CidView::OnXor()
 		MessageBox(str);
 	}
 		
+}
+
+
+void CidView::OnHdnumChange()
+{
+	// TODO: Add your command handler code here
+	bpNetwork->set_hdnum(0);
+	CHDNUM_CHANGE dlg;
+	if (dlg.DoModal() == IDOK)
+	{
+		bpNetwork->set_hdnum(dlg.input_hdnum);
+	}
+}
+
+
+void CidView::OnTest()
+{
+	// TODO: Add your command handler code here
+	CXOR dlg;
+	int x = 0, y = 0;
+	dlg.xor_insert_A = x;
+	dlg.xor_insert_B = y;
+	if (dlg.DoModal() == IDOK)
+	{
+		x = dlg.xor_insert_A;
+		y = dlg.xor_insert_B;
+		std::vector <float> test(2), ans;
+		test[0] = x; test[1] = y;
+		ans = bpNetwork->foreCast(test);
+		std::wstring ans0 = getstr(ans[0]);
+		std::wstring ans1 = getstr(ans[1]);
+		std::wstring a = L"答案为0的几率为" + ans0 + L"\r\n答案为1的几率为" + ans1;
+		LPCWSTR str = a.c_str();
+		MessageBox(str);
+	}
+
 }

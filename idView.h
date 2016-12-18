@@ -50,6 +50,8 @@ public:
 	afx_msg void OnLoadnetwork();
 	afx_msg void OnIdentify();
 	afx_msg void OnXor();
+	afx_msg void OnHdnumChange();
+	afx_msg void OnTest();
 };
 
 #ifndef _DEBUG  // idView.cpp 中的调试版本

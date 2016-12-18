@@ -64,6 +64,7 @@ namespace bp {
 		int nodeOfLay(int k) const;
 		bool store() const;
 		bool load() ;
+		void set_hdnum(int x);
 
 	private:
 		void initNetwork();
@@ -76,7 +77,7 @@ namespace bp {
 		Type getAccu();
 		Type sigmoid(const Type &);
 	private:
-		int inNum, ouNum, hdNum, layer;
+		int inNum, ouNum, hdNum, layer, input_hdnum;
 
 		std::vector<Data> data;
 		Type w[10][Num][Num];

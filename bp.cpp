@@ -323,7 +323,7 @@ namespace bp {
 	}
 
 	void bp::getNums() {
-		layer = Layer;
+		layer = input_hdnum == 0 ? Layer : input_hdnum;
 		inNum = data[0].input.size();
 		ouNum = data[0].output.size();
 		hdNum = (int)sqrt(max(inNum + ouNum, 0) * 1.0) + 5;
@@ -445,6 +445,11 @@ namespace bp {
 	Type bp::sigmoid(const Type &x)
 	{
 		return A / (1 + exp(-x / B));
+	}
+
+	void bp::set_hdnum(int x)
+	{
+		input_hdnum = x;
 	}
 
 };
