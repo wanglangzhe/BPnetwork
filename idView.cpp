@@ -5,7 +5,9 @@
 #include "stdafx.h"
 #include "bp.h"
 #include "myIdentify.h"
+#include "XOR.h"
 #include <iostream>
+#include <string>
 
 #pragma warning(disable : 4996) 
 
@@ -41,6 +43,7 @@ BEGIN_MESSAGE_MAP(CidView, CView)
 	ON_COMMAND(ID_SAVENETWORK, &CidView::OnSavenetwork)
 	ON_COMMAND(ID_LOADNETWORK, &CidView::OnLoadnetwork)
 	ON_COMMAND(ID_IDENTIFY, &CidView::OnIdentify)
+	ON_COMMAND(ID_XOR, &CidView::OnXor)
 END_MESSAGE_MAP()
 
 // CidView 构造/析构
@@ -186,7 +189,7 @@ void CidView::OnStudy()
 	}
 	
 
-	//bp::washData("D:\\work\\VS\\id\\dataset\\digits\\trainingDigits\\", data);
+	//bp::washData("C:\\Users\\Administrator\\Desktop\\BPnetwork-master\\", data);
 	
 	bpNetwork->getData(data);
 	//bpNetwork->train();
@@ -265,7 +268,7 @@ void CidView::OnStudy()
 
 	ReleaseDC(pDC); // 释放DC
 
-					
+					/*
 					for (int tim = 0; tim < 40; ++tim) {
 					int x, y;
 					std::cin >> x >> y;
@@ -274,7 +277,7 @@ void CidView::OnStudy()
 					ans = bpNetwork->foreCast(test);
 					std::cout << ans[0] << ' ' << ans[1] << std::endl;
 					}
-					
+					*/
 	
 	MessageBox(L"train finish");
 	
@@ -322,9 +325,42 @@ void CidView::OnIdentify()
 	// TODO: 在此添加命令处理程序代码
 	myIdentify dlg;
 	if (dlg.DoModal() == IDOK) {
-		MessageBox(L"识别输入完毕");
+		//MessageBox(L"识别输入完毕");
 	}
 	else {
 		assert(0);
 	}
+}
+
+std::wstring getstr(float x)
+{
+	std::wstring s;
+	char ch[40] = {0};
+	sprintf(ch, "%f", x);
+	for (int i = 0; i < strlen(ch); i++)
+		s += ch[i];
+	return s;
+}
+
+void CidView::OnXor()
+{
+	// TODO: Add your command handler code here
+	CXOR dlg;
+	int x = 0, y = 0;
+	dlg.xor_insert_A = x;
+	dlg.xor_insert_B = y;
+	if (dlg.DoModal() == IDOK)
+	{
+		x = dlg.xor_insert_A;
+		y = dlg.xor_insert_B;
+		std::vector <float> test(2), ans;
+		test[0] = x; test[1] = y;
+		ans = bpNetwork->foreCast(test);
+		std::wstring ans0 = getstr(ans[0]);
+		std::wstring ans1 = getstr(ans[1]);
+		std::wstring a = L"答案为0的几率为" + ans0 + L"\r\n答案为1的几率为" + ans1;
+		LPCWSTR str = a.c_str();
+		MessageBox(str);
+	}
+		
 }

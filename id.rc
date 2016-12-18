@@ -17,7 +17,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
+// Chinese (Simplified, PRC) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -139,7 +139,7 @@ BEGIN
         MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
         MENUITEM "打印设置(&R)...",                 ID_FILE_PRINT_SETUP
         MENUITEM SEPARATOR
-        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1
         MENUITEM SEPARATOR
         MENUITEM "退出(&X)",                      ID_APP_EXIT
     END
@@ -175,11 +175,12 @@ BEGIN
             END
         END
     END
-    MENUITEM " 学习",                         ID_STUDY, GRAYED
     MENUITEM "保存",                          ID_SAVENETWORK
     MENUITEM "读取",                          ID_LOADNETWORK
     MENUITEM "测试",                          ID_TESTNETWORK
     MENUITEM "识别",                          ID_IDENTIFY
+    MENUITEM " 异或学习",                       ID_STUDY
+    MENUITEM "异或测试",                        32782
     POPUP "帮助(&H)"
     BEGIN
         MENUITEM "关于 id(&A)...",                ID_APP_ABOUT
@@ -260,6 +261,20 @@ BEGIN
     PUSHBUTTON      "取消",IDCANCEL,320,240,50,14
 END
 
+IDD_XOR DIALOGEX 0, 0, 141, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "xor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,61,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,84,60,50,14
+    LTEXT           "  请输入a和b,将输出a异或b的结果",IDC_STATIC,7,15,120,8
+    LTEXT           "a",IDC_STATIC,25,36,8,8
+    LTEXT           "b",IDC_STATIC,77,36,8,8
+    EDITTEXT        INSERT_A,33,35,27,12,ES_AUTOHSCROLL
+    EDITTEXT        INSERT_B,84,35,27,12,ES_AUTOHSCROLL
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -323,6 +338,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 254
     END
+
+    IDD_XOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 134
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 75
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -333,6 +356,11 @@ END
 //
 
 IDD_IDENTIFY AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_XOR AFX_DIALOG_LAYOUT
 BEGIN
     0
 END
@@ -480,7 +508,7 @@ BEGIN
     ID_32771                "学习"
 END
 
-#endif    // 中文(简体，中国) resources
+#endif    // Chinese (Simplified, PRC) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

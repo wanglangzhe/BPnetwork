@@ -45,6 +45,9 @@
     <ClInclude Include="myIdentify.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="XOR.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="id.cpp">
@@ -66,6 +69,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="myIdentify.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XOR.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

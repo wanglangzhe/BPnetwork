@@ -49,6 +49,7 @@ public:
 	afx_msg void OnSavenetwork();
 	afx_msg void OnLoadnetwork();
 	afx_msg void OnIdentify();
+	afx_msg void OnXor();
 };
 
 #ifndef _DEBUG  // idView.cpp 中的调试版本

@@ -10,7 +10,7 @@
 
 namespace bp {
 #define SQR(x) ((x)*(x))
-#define ABS(x) ((x)<0?(-(x)):(x))
+#define ABS(x) ((x)<0?(-(x)):(x)) 
 
 #define Type float
 #define Layer 5

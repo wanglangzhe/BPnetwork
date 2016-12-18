@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 生成的包含文件。
-// 供 id.rc 使用
+// Microsoft Visual C++ generated include file.
+// Used by id.rc
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_OLE_INIT_FAILED             100
@@ -30,6 +30,9 @@
 #define ID_VIEW_APPLOOK_WINDOWS_7       219
 #define IDS_EDIT_MENU                   306
 #define IDD_IDENTIFY                    310
+#define IDD_XOR                         312
+#define INSERT_A                        1000
+#define INSERT_B                        1001
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -41,14 +44,15 @@
 #define ID_SAVENETWORK                  32779
 #define ID_TESTNETWORK                  32780
 #define ID_IDENTIFY                     32781
+#define ID_XOR                          32782
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        312
-#define _APS_NEXT_COMMAND_VALUE         32782
-#define _APS_NEXT_CONTROL_VALUE         1000
+#define _APS_NEXT_RESOURCE_VALUE        314
+#define _APS_NEXT_COMMAND_VALUE         32783
+#define _APS_NEXT_CONTROL_VALUE         1002
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

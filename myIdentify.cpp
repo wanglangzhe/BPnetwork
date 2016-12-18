@@ -21,7 +21,7 @@ myIdentify::myIdentify(CWnd* pParent /*=NULL*/)
 
 BOOL myIdentify::OnInitDialog()
 {
-	MessageBox(L"init ! ");
+	//MessageBox(L"init ! ");
 
 	SetCursor(LoadCursor(NULL, IDC_CROSS)); // 设置鼠标为十字
 
