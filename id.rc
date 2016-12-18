@@ -130,7 +130,7 @@ IDR_MAINFRAME MENU
 BEGIN
     MENUITEM "网络读取",                        ID_LOADNETWORK
     MENUITEM "手写识别",                        ID_IDENTIFY
-    MENUITEM "修改隐藏层数",                      ID_HDNUM_CHANGE
+    MENUITEM "修改层数",                        ID_HDNUM_CHANGE
     MENUITEM " 异或学习",                       ID_STUDY
     MENUITEM "异或测试",                        ID_XOR
 END
@@ -230,7 +230,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,7,58,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,74,58,50,14
-    LTEXT           "  输入你希望的隐藏层层数(3~10)",IDC_STATIC,7,17,116,8
+    LTEXT           "  输入你希望的层数(3~10)",IDC_STATIC,17,17,92,8
     EDITTEXT        IDC_EDIT1,43,33,42,17,ES_AUTOHSCROLL
 END
 

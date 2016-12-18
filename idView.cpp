@@ -53,7 +53,7 @@ END_MESSAGE_MAP()
 
 CidView::CidView()
 {
-	MessageBox(L"start");
+	//MessageBox(L"start");
 	// TODO: 在此处添加构造代码
 	bpNetwork = new bp::bp();
 }
@@ -172,7 +172,7 @@ void CidView::OnStudy()
 {		
 	//点击此处进行神经网络的学习
 	// TODO: 在此添加命令处理程序代码
-	MessageBox(L"here!");
+	//MessageBox(L"here!");
 
 	AllocConsole();                     // 打开控制台资源
 	freopen("CONOUT$", "w+t", stdout);// 申请写
